@@ -11,9 +11,9 @@
 const errorOverlayMiddleware = require('react-dev-utils/errorOverlayMiddleware');
 const evalSourceMapMiddleware = require('react-dev-utils/evalSourceMapMiddleware');
 const noopServiceWorkerMiddleware = require('react-dev-utils/noopServiceWorkerMiddleware');
-const ignoredFiles = require('react-dev-utils/ignoredFiles');
 const paths = require('./paths');
 const fs = require('fs');
+const watchOptions = require(paths.watchOptions);
 
 const protocol = process.env.HTTPS === 'true' ? 'https' : 'http';
 const host = process.env.HOST || '0.0.0.0';
@@ -76,9 +76,7 @@ module.exports = function(proxy, allowedHost) {
     // https://github.com/facebook/create-react-app/issues/293
     // src/node_modules is not ignored to support absolute imports
     // https://github.com/facebook/create-react-app/issues/1065
-    watchOptions: {
-      ignored: ignoredFiles(paths.appSrc),
-    },
+    watchOptions,
     // Enable HTTPS if the HTTPS environment variable is set to 'true'
     https: protocol === 'https',
     host,

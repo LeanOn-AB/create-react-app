@@ -1,10 +1,10 @@
 {
-  "name": "react-scripts",
-  "version": "3.1.2",
-  "description": "Configuration and scripts for Create React App.",
+  "name": "leanon-scripts",
+  "version": "1.0.0",
+  "description": "Configuration and scripts for Create React App and fork to expose watchOptions settings.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/facebook/create-react-app.git",
+    "url": "https://github.com/LeanOn-AB/create-react-app",
     "directory": "packages/react-scripts"
   },
   "license": "MIT",
